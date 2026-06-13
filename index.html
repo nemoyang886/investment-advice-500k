@@ -17,8 +17,8 @@
     --gold: #d6a84f;
     --green: #1c7c54;
     --red: #b23a48;
-    --shadow: 0 18px 50px rgba(20,33,61,0.10);
-    --radius: 22px;
+    --shadow: 0 18px 42px rgba(20,33,61,0.09);
+    --radius: 14px;
   }
   * { box-sizing: border-box; }
   body {
@@ -26,9 +26,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
     color: var(--ink);
     background:
-      radial-gradient(circle at 8% 0%, rgba(47,128,237,.16), transparent 28%),
-      radial-gradient(circle at 92% 8%, rgba(214,168,79,.16), transparent 26%),
-      linear-gradient(180deg, #f7faff 0%, #eef3fa 100%);
+      linear-gradient(180deg, #f7faff 0%, #eef3fa 48%, #f6f8fb 100%);
     line-height: 1.7;
   }
   .page {
@@ -39,11 +37,10 @@
   .hero {
     position: relative;
     overflow: hidden;
-    border-radius: 32px;
+    border-radius: 22px;
     padding: 48px 46px;
     background:
-      linear-gradient(135deg, rgba(20,33,61,.98), rgba(18,64,116,.96) 58%, rgba(16,93,117,.92)),
-      radial-gradient(circle at 88% 18%, rgba(255,255,255,.18), transparent 24%);
+      linear-gradient(135deg, rgba(20,33,61,.98), rgba(18,64,116,.96) 58%, rgba(16,93,117,.92));
     color: #fff;
     box-shadow: var(--shadow);
   }
@@ -74,7 +71,7 @@
     max-width: 860px;
     font-size: clamp(34px, 5vw, 62px);
     line-height: 1.08;
-    letter-spacing: -1.2px;
+    letter-spacing: 0;
   }
   .hero p {
     margin: 0;
@@ -93,7 +90,7 @@
   .hero-stat {
     background: rgba(255,255,255,.12);
     border: 1px solid rgba(255,255,255,.20);
-    border-radius: 20px;
+    border-radius: 14px;
     padding: 18px;
     backdrop-filter: blur(8px);
   }
@@ -119,7 +116,7 @@
   .section h2 {
     margin: 0 0 14px;
     font-size: 28px;
-    letter-spacing: -0.3px;
+    letter-spacing: 0;
   }
   .section h3 {
     margin: 24px 0 10px;
@@ -143,7 +140,7 @@
   .mini-card {
     background: #fff;
     border: 1px solid var(--line);
-    border-radius: 18px;
+    border-radius: 12px;
     padding: 20px;
   }
   .mini-card strong {
@@ -162,7 +159,7 @@
     border-spacing: 0;
     overflow: hidden;
     border: 1px solid var(--line);
-    border-radius: 18px;
+    border-radius: 12px;
     background: #fff;
   }
   th, td {
@@ -276,7 +273,7 @@
     counter-increment: step;
     position: relative;
     padding: 18px 18px 18px 64px;
-    border-radius: 18px;
+    border-radius: 12px;
     background: #fff;
     border: 1px solid var(--line);
   }
@@ -300,7 +297,7 @@
   }
   .note {
     padding: 16px 18px;
-    border-radius: 18px;
+    border-radius: 12px;
     background: #f7fbff;
     border: 1px solid #dbeafe;
     color: #3d5573;
@@ -344,7 +341,7 @@
     overflow: hidden;
     background: #fff;
     border: 1px solid var(--line);
-    border-radius: 20px;
+    border-radius: 14px;
     padding: 20px;
   }
   .strategy-card:after {
@@ -437,7 +434,7 @@
   .choice-card {
     background: linear-gradient(180deg, #ffffff, #f8fbff);
     border: 1px solid var(--line);
-    border-radius: 18px;
+    border-radius: 12px;
     padding: 18px;
   }
   .choice-card b {
@@ -462,12 +459,213 @@
   }
   .compact-table td, .compact-table th { font-size: 14px; }
 
+  .simulator {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+    gap: 18px;
+    margin: 22px 0 26px;
+  }
+  .sim-panel,
+  .control-panel {
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .sim-panel {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 22px;
+    align-items: center;
+  }
+  .allocation-ring {
+    --n-end: 60%;
+    --t-end: 80%;
+    --s-end: 90%;
+    width: 220px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: conic-gradient(var(--blue2) 0 var(--n-end), var(--cyan) var(--n-end) var(--t-end), var(--gold) var(--t-end) var(--s-end), #9fb0c3 var(--s-end) 100%);
+    position: relative;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.55), 0 16px 38px rgba(20,33,61,.12);
+  }
+  .allocation-ring:after {
+    content: "";
+    position: absolute;
+    inset: 42px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .ring-center {
+    position: absolute;
+    inset: 58px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+  .ring-center span {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .sim-kicker {
+    margin: 0 0 6px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .sim-value {
+    margin: 0;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1;
+    font-weight: 900;
+    color: var(--blue);
+  }
+  .sim-value small {
+    display: block;
+    margin-top: 8px;
+    font-size: 18px;
+    color: var(--muted);
+    font-weight: 800;
+  }
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .metric-card {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 13px 14px;
+    background: rgba(255,255,255,.74);
+  }
+  .metric-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+  .metric-card b {
+    font-size: 19px;
+    color: var(--ink);
+  }
+  .control-panel h3 {
+    margin-top: 0;
+  }
+  .control-row {
+    padding: 15px 0;
+    border-top: 1px solid var(--line);
+  }
+  .control-row:first-of-type {
+    border-top: 0;
+    padding-top: 2px;
+  }
+  .control-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+  .control-head label {
+    font-weight: 800;
+  }
+  .control-head output {
+    font-variant-numeric: tabular-nums;
+    font-weight: 900;
+    color: var(--blue);
+  }
+  .control-row input[type="range"] {
+    width: 100%;
+    accent-color: var(--blue2);
+  }
+  .control-meta {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .cash-meter {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #f2f6fb;
+    border: 1px solid var(--line);
+  }
+  .cash-meter b {
+    color: var(--blue);
+  }
+  .preset-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .preset-button {
+    appearance: none;
+    border: 1px solid #c9d7ea;
+    border-radius: 999px;
+    background: #fff;
+    color: #20314f;
+    padding: 9px 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+  .preset-button:hover,
+  .preset-button.active {
+    border-color: rgba(47,128,237,.72);
+    background: #edf4ff;
+  }
+  .preset-button:active {
+    transform: translateY(1px);
+  }
+  .allocation-table {
+    margin-top: 16px;
+  }
+  .allocation-table td,
+  .allocation-table th {
+    font-size: 13px;
+    padding: 11px 12px;
+  }
+  .insight-line {
+    margin: 16px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .risk-label {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    border-radius: 999px;
+    padding: 4px 10px;
+    background: #fff6df;
+    color: #7d5a17;
+    font-size: 12px;
+    font-weight: 900;
+  }
+
 
   @media (max-width: 900px) {
     .hero { padding: 34px 24px; }
-    .hero-grid, .grid-2, .grid-3, .strategy-grid, .compare-note, .alloc, .choice-grid {
+    .hero-grid, .grid-2, .grid-3, .strategy-grid, .compare-note, .alloc, .choice-grid, .simulator, .sim-panel, .result-grid {
       grid-template-columns: 1fr;
     }
+    .allocation-ring { margin: 0 auto; width: min(220px, 100%); }
+    .control-panel { min-width: 0; }
     .bar-row {
       grid-template-columns: 1fr;
       gap: 6px;
@@ -584,6 +782,78 @@
     <section class="section">
       <h2>三、不同投资策略对比</h2>
       <p class="lead">下面把同样 50 万本金拆成十二种策略。收益测算统一采用前文相同三年数据：纳斯达克100 QDII 代表收益约 +98.6%，纳斯达克科技增强代理收益约 +151.9%，标普500 QDII 代表收益约 +73.1%，现金按 0% 简化计算。</p>
+
+      <div class="simulator" id="allocationSimulator" aria-label="投资比例互动测算器">
+        <div class="sim-panel">
+          <div class="allocation-ring" id="allocationRing">
+            <div class="ring-center"><div id="ringTotal">100%</div><span>已分配</span></div>
+          </div>
+          <div>
+            <p class="sim-kicker">按当前比例测算</p>
+            <p class="sim-value"><span id="finalValue">98.4万</span><small> 三年后估算</small></p>
+            <div class="result-grid">
+              <div class="metric-card"><span>预计盈利</span><b id="profitValue">48.4万</b></div>
+              <div class="metric-card"><span>总收益率</span><b id="totalReturnValue">96.9%</b></div>
+              <div class="metric-card"><span>年化估算</span><b id="annualValue">25.3%</b></div>
+            </div>
+            <p class="insight-line"><span class="risk-label" id="riskLabel">中高波动</span> <span id="insightText">纳指100是主仓，科技增强提供 AI 弹性，现金保留回撤加仓空间。</span></p>
+            <table class="allocation-table">
+              <thead><tr><th>资产</th><th>比例</th><th>金额</th><th>历史假设</th></tr></thead>
+              <tbody>
+                <tr><td>纳斯达克100 QDII</td><td id="nasdaqPctCell">60%</td><td id="nasdaqAmountCell">30.0万</td><td>+98.6%</td></tr>
+                <tr><td>纳斯达克科技增强</td><td id="techPctCell">20%</td><td id="techAmountCell">10.0万</td><td>+151.9%</td></tr>
+                <tr><td>标普500 QDII</td><td id="spPctCell">10%</td><td id="spAmountCell">5.0万</td><td>+73.1%</td></tr>
+                <tr><td>现金管理</td><td id="cashPctCell">10%</td><td id="cashAmountCell">5.0万</td><td>0%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="control-panel">
+          <h3>调整投资比例</h3>
+          <p class="small">拖动前三项比例，现金会自动补足到 100%。测算只使用本页历史回测假设，不代表未来收益。</p>
+
+          <div class="control-row">
+            <div class="control-head">
+              <label for="nasdaqRange">纳斯达克100 QDII</label>
+              <output id="nasdaqOutput" for="nasdaqRange">60%</output>
+            </div>
+            <input id="nasdaqRange" type="range" min="0" max="100" step="5" value="60" data-asset="nasdaq">
+            <div class="control-meta"><span>核心科技宽基</span><span id="nasdaqAmount">30.0万</span></div>
+          </div>
+
+          <div class="control-row">
+            <div class="control-head">
+              <label for="techRange">纳斯达克科技增强</label>
+              <output id="techOutput" for="techRange">20%</output>
+            </div>
+            <input id="techRange" type="range" min="0" max="100" step="5" value="20" data-asset="tech">
+            <div class="control-meta"><span>AI 与科技弹性</span><span id="techAmount">10.0万</span></div>
+          </div>
+
+          <div class="control-row">
+            <div class="control-head">
+              <label for="spRange">标普500 QDII</label>
+              <output id="spOutput" for="spRange">10%</output>
+            </div>
+            <input id="spRange" type="range" min="0" max="100" step="5" value="10" data-asset="sp">
+            <div class="control-meta"><span>美国宽基平衡</span><span id="spAmount">5.0万</span></div>
+          </div>
+
+          <div class="cash-meter">
+            <span>现金、货币基金、国债逆回购</span>
+            <b id="cashOutput">10%</b>
+          </div>
+
+          <div class="preset-row" aria-label="常用策略预设">
+            <button class="preset-button" type="button" data-preset="defensive">防守等待</button>
+            <button class="preset-button active" type="button" data-preset="standard">标准推荐</button>
+            <button class="preset-button" type="button" data-preset="openai">OpenAI 增强</button>
+            <button class="preset-button" type="button" data-preset="growth">进取科技</button>
+            <button class="preset-button" type="button" data-preset="fullTech">满仓科技</button>
+          </div>
+        </div>
+      </div>
 
       <div class="choice-grid">
         <div class="choice-card"><b>风险偏好低</b>先看防守等待型、稳健宽基型、标普平衡型。<span>更重视回撤控制</span></div>
@@ -912,5 +1182,160 @@
       编制日期：2026年6月13日。数据以 2026年6月12日美股收盘及相关公开资料为准。
     </div>
   </main>
+  <script>
+    (() => {
+      const principal = 500000;
+      const assumptions = {
+        nasdaq: 0.986,
+        tech: 1.519,
+        sp: 0.731,
+        cash: 0
+      };
+      const presets = {
+        defensive: { nasdaq: 30, tech: 10, sp: 20 },
+        standard: { nasdaq: 60, tech: 20, sp: 10 },
+        openai: { nasdaq: 55, tech: 25, sp: 10 },
+        growth: { nasdaq: 70, tech: 25, sp: 0 },
+        fullTech: { nasdaq: 75, tech: 25, sp: 0 }
+      };
+      const ranges = {
+        nasdaq: document.getElementById("nasdaqRange"),
+        tech: document.getElementById("techRange"),
+        sp: document.getElementById("spRange")
+      };
+      const outputs = {
+        finalValue: document.getElementById("finalValue"),
+        profitValue: document.getElementById("profitValue"),
+        totalReturnValue: document.getElementById("totalReturnValue"),
+        annualValue: document.getElementById("annualValue"),
+        ringTotal: document.getElementById("ringTotal"),
+        allocationRing: document.getElementById("allocationRing"),
+        riskLabel: document.getElementById("riskLabel"),
+        insightText: document.getElementById("insightText"),
+        cashOutput: document.getElementById("cashOutput")
+      };
+      const assetOutputs = {
+        nasdaq: {
+          pct: document.getElementById("nasdaqOutput"),
+          amount: document.getElementById("nasdaqAmount"),
+          cellPct: document.getElementById("nasdaqPctCell"),
+          cellAmount: document.getElementById("nasdaqAmountCell")
+        },
+        tech: {
+          pct: document.getElementById("techOutput"),
+          amount: document.getElementById("techAmount"),
+          cellPct: document.getElementById("techPctCell"),
+          cellAmount: document.getElementById("techAmountCell")
+        },
+        sp: {
+          pct: document.getElementById("spOutput"),
+          amount: document.getElementById("spAmount"),
+          cellPct: document.getElementById("spPctCell"),
+          cellAmount: document.getElementById("spAmountCell")
+        },
+        cash: {
+          cellPct: document.getElementById("cashPctCell"),
+          cellAmount: document.getElementById("cashAmountCell")
+        }
+      };
+      const presetButtons = Array.from(document.querySelectorAll("[data-preset]"));
+
+      function getValues() {
+        const nasdaq = Number(ranges.nasdaq.value);
+        const tech = Number(ranges.tech.value);
+        const sp = Number(ranges.sp.value);
+        return { nasdaq, tech, sp, cash: Math.max(0, 100 - nasdaq - tech - sp) };
+      }
+
+      function formatWan(value) {
+        return `${(value / 10000).toFixed(1)}万`;
+      }
+
+      function formatPct(value) {
+        return `${value.toFixed(1)}%`;
+      }
+
+      function clampChanged(changedKey) {
+        const values = getValues();
+        const totalRiskAssets = values.nasdaq + values.tech + values.sp;
+        if (totalRiskAssets <= 100) return;
+        const overflow = totalRiskAssets - 100;
+        const nextValue = Math.max(0, Number(ranges[changedKey].value) - overflow);
+        ranges[changedKey].value = String(Math.round(nextValue / 5) * 5);
+      }
+
+      function describeRisk(values) {
+        const riskScore = values.nasdaq * 0.85 + values.tech * 1.25 + values.sp * 0.55 - values.cash * 0.25;
+        if (riskScore < 42) return ["中等波动", "现金和宽基比例更高，收益弹性下降，但买点压力更小。"];
+        if (riskScore < 64) return ["中高波动", "纳指100是主仓，科技增强提供 AI 弹性，现金保留回撤加仓空间。"];
+        if (riskScore < 82) return ["高波动", "科技仓位较高，长期弹性更强，也需要承受更深的阶段性回撤。"];
+        return ["很高波动", "组合接近满仓科技资产，适合资金期限长且能接受大幅回撤的人。"];
+      }
+
+      function updateActivePreset(values) {
+        presetButtons.forEach((button) => {
+          const preset = presets[button.dataset.preset];
+          const active = preset && preset.nasdaq === values.nasdaq && preset.tech === values.tech && preset.sp === values.sp;
+          button.classList.toggle("active", Boolean(active));
+        });
+      }
+
+      function render(changedKey) {
+        if (changedKey) clampChanged(changedKey);
+        const values = getValues();
+        const totalReturn =
+          values.nasdaq / 100 * assumptions.nasdaq +
+          values.tech / 100 * assumptions.tech +
+          values.sp / 100 * assumptions.sp +
+          values.cash / 100 * assumptions.cash;
+        const finalValue = principal * (1 + totalReturn);
+        const profit = finalValue - principal;
+        const annualReturn = Math.pow(finalValue / principal, 1 / 3) - 1;
+        const nEnd = values.nasdaq;
+        const tEnd = values.nasdaq + values.tech;
+        const sEnd = values.nasdaq + values.tech + values.sp;
+        const [riskLabel, insight] = describeRisk(values);
+
+        outputs.finalValue.textContent = formatWan(finalValue);
+        outputs.profitValue.textContent = formatWan(profit);
+        outputs.totalReturnValue.textContent = formatPct(totalReturn * 100);
+        outputs.annualValue.textContent = formatPct(annualReturn * 100);
+        outputs.ringTotal.textContent = `${nEnd + values.tech + values.sp + values.cash}%`;
+        outputs.cashOutput.textContent = `${values.cash}%`;
+        outputs.riskLabel.textContent = riskLabel;
+        outputs.insightText.textContent = insight;
+        outputs.allocationRing.style.setProperty("--n-end", `${nEnd}%`);
+        outputs.allocationRing.style.setProperty("--t-end", `${tEnd}%`);
+        outputs.allocationRing.style.setProperty("--s-end", `${sEnd}%`);
+
+        ["nasdaq", "tech", "sp"].forEach((key) => {
+          assetOutputs[key].pct.textContent = `${values[key]}%`;
+          assetOutputs[key].amount.textContent = formatWan(principal * values[key] / 100);
+          assetOutputs[key].cellPct.textContent = `${values[key]}%`;
+          assetOutputs[key].cellAmount.textContent = formatWan(principal * values[key] / 100);
+        });
+        assetOutputs.cash.cellPct.textContent = `${values.cash}%`;
+        assetOutputs.cash.cellAmount.textContent = formatWan(principal * values.cash / 100);
+
+        updateActivePreset(values);
+      }
+
+      Object.entries(ranges).forEach(([key, range]) => {
+        range.addEventListener("input", () => render(key));
+      });
+      presetButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const preset = presets[button.dataset.preset];
+          if (!preset) return;
+          ranges.nasdaq.value = String(preset.nasdaq);
+          ranges.tech.value = String(preset.tech);
+          ranges.sp.value = String(preset.sp);
+          render();
+        });
+      });
+
+      render();
+    })();
+  </script>
 </body>
 </html>
