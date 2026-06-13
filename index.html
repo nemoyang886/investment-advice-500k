@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>50万元美国科技股长期投资策略 | QDII ETF 组合方案</title>
+<style>
+  :root {
+    --bg: #f4f7fb;
+    --ink: #14213d;
+    --muted: #5f6c7b;
+    --card: rgba(255,255,255,0.92);
+    --line: #dbe3ef;
+    --blue: #1b4d89;
+    --blue2: #2f80ed;
+    --cyan: #1aa6b7;
+    --gold: #d6a84f;
+    --green: #1c7c54;
+    --red: #b23a48;
+    --shadow: 0 18px 50px rgba(20,33,61,0.10);
+    --radius: 22px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 8% 0%, rgba(47,128,237,.16), transparent 28%),
+      radial-gradient(circle at 92% 8%, rgba(214,168,79,.16), transparent 26%),
+      linear-gradient(180deg, #f7faff 0%, #eef3fa 100%);
+    line-height: 1.7;
+  }
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 36px 22px 70px;
+  }
+  .hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 32px;
+    padding: 48px 46px;
+    background:
+      linear-gradient(135deg, rgba(20,33,61,.98), rgba(18,64,116,.96) 58%, rgba(16,93,117,.92)),
+      radial-gradient(circle at 88% 18%, rgba(255,255,255,.18), transparent 24%);
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+  .hero:after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    bottom: -130px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    border: 44px solid rgba(255,255,255,.06);
+  }
+  .label {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 13px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.11);
+    border-radius: 999px;
+    color: rgba(255,255,255,.92);
+    font-size: 14px;
+    backdrop-filter: blur(8px);
+  }
+  .hero h1 {
+    margin: 18px 0 16px;
+    max-width: 860px;
+    font-size: clamp(34px, 5vw, 62px);
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+  }
+  .hero p {
+    margin: 0;
+    max-width: 850px;
+    color: rgba(255,255,255,.86);
+    font-size: 18px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 34px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.20);
+    border-radius: 20px;
+    padding: 18px;
+    backdrop-filter: blur(8px);
+  }
+  .hero-stat .num {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .hero-stat .desc {
+    font-size: 13px;
+    color: rgba(255,255,255,.72);
+    margin-top: 5px;
+  }
+  .section {
+    margin-top: 26px;
+    background: var(--card);
+    border: 1px solid rgba(219,227,239,.9);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+  }
+  .section h2 {
+    margin: 0 0 14px;
+    font-size: 28px;
+    letter-spacing: -0.3px;
+  }
+  .section h3 {
+    margin: 24px 0 10px;
+    font-size: 20px;
+  }
+  .lead {
+    color: var(--muted);
+    margin-top: 0;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 22px;
+    align-items: stretch;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .mini-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 20px;
+  }
+  .mini-card strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .mini-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #fff;
+  }
+  th, td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+    text-align: left;
+    font-size: 15px;
+  }
+  th {
+    background: #f0f5fb;
+    color: #20314f;
+    font-weight: 800;
+  }
+  tr:last-child td { border-bottom: none; }
+  .amount {
+    font-weight: 800;
+    color: var(--blue);
+    white-space: nowrap;
+  }
+  .pill {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #edf4ff;
+    color: var(--blue);
+    margin-right: 4px;
+  }
+  .pill.gold { background: #fff6df; color: #8a651d; }
+  .pill.green { background: #e9f7ef; color: #167144; }
+  .pill.red { background: #fff0f1; color: #9e2736; }
+  .alloc {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 26px;
+    align-items: center;
+  }
+  .donut {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: conic-gradient(var(--blue2) 0 60%, var(--cyan) 60% 80%, var(--gold) 80% 90%, #9fb0c3 90% 100%);
+    position: relative;
+    margin: auto;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.4), var(--shadow);
+  }
+  .donut:after {
+    content: "50万\A 组合";
+    white-space: pre;
+    position: absolute;
+    inset: 36px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--ink);
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .legend-row {
+    display: grid;
+    grid-template-columns: 56px 1fr 84px;
+    gap: 10px;
+    align-items: center;
+    margin: 12px 0;
+  }
+  .swatch {
+    height: 12px;
+    border-radius: 999px;
+  }
+  .bar-wrap {
+    margin-top: 18px;
+  }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 150px 1fr 100px;
+    gap: 14px;
+    align-items: center;
+    margin: 14px 0;
+  }
+  .bar-bg {
+    height: 17px;
+    background: #e9eef6;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--blue2), var(--cyan));
+  }
+  .bar.goldbar { background: linear-gradient(90deg, var(--gold), #e9c773); }
+  .bar.graybar { background: linear-gradient(90deg, #8aa0b8, #b0bed0); }
+  .number {
+    font-weight: 900;
+    color: var(--blue);
+  }
+  .steps {
+    counter-reset: step;
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .step {
+    counter-increment: step;
+    position: relative;
+    padding: 18px 18px 18px 64px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .step:before {
+    content: counter(step);
+    position: absolute;
+    left: 18px;
+    top: 19px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+  }
+  .step b {
+    display: block;
+    margin-bottom: 4px;
+  }
+  .note {
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: #f7fbff;
+    border: 1px solid #dbeafe;
+    color: #3d5573;
+  }
+  .risk {
+    background: #fff8f4;
+    border-color: #ffe0c7;
+  }
+  .ok {
+    background: #f1fbf5;
+    border-color: #cdeedb;
+  }
+  .small {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .source-list {
+    margin: 8px 0 0;
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .source-list li { margin: 7px 0; }
+  a { color: var(--blue2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .footer {
+    margin-top: 28px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .strategy-card {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 20px;
+  }
+  .strategy-card:after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    right: -45px;
+    top: -45px;
+    border-radius: 50%;
+    background: rgba(47,128,237,.10);
+  }
+  .strategy-card.recommended {
+    border: 2px solid rgba(47,128,237,.45);
+    box-shadow: 0 16px 40px rgba(47,128,237,.12);
+  }
+  .strategy-card h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+  }
+  .tagline {
+    color: var(--muted);
+    font-size: 13px;
+    min-height: 44px;
+    margin: 0 0 14px;
+  }
+  .return-big {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--blue);
+    line-height: 1.1;
+  }
+  .return-small {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  .mix-list {
+    display: grid;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .mix-item {
+    display: grid;
+    grid-template-columns: 76px 1fr 44px;
+    gap: 8px;
+    align-items: center;
+    font-size: 13px;
+  }
+  .mix-bg {
+    height: 9px;
+    border-radius: 999px;
+    background: #e8eef7;
+    overflow: hidden;
+  }
+  .mix-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--blue2), var(--cyan));
+  }
+  .mix-fill.tech { background: linear-gradient(90deg, var(--cyan), #5fc6d1); }
+  .mix-fill.sp { background: linear-gradient(90deg, var(--gold), #e9c773); }
+  .mix-fill.cash { background: linear-gradient(90deg, #8aa0b8, #b0bed0); }
+  .winner-ribbon {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: #edf4ff;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .compare-note {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .heat-low { color: var(--green); font-weight: 800; }
+  .heat-mid { color: #8a651d; font-weight: 800; }
+  .heat-high { color: var(--red); font-weight: 800; }
+
+  .choice-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 18px 0 4px;
+  }
+  .choice-card {
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 18px;
+  }
+  .choice-card b {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .choice-card span {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: #edf4ff;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .strategy-note-line {
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .compact-table td, .compact-table th { font-size: 14px; }
+
+
+  @media (max-width: 900px) {
+    .hero { padding: 34px 24px; }
+    .hero-grid, .grid-2, .grid-3, .strategy-grid, .compare-note, .alloc, .choice-grid {
+      grid-template-columns: 1fr;
+    }
+    .bar-row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .legend-row { grid-template-columns: 46px 1fr 72px; }
+    .section { padding: 22px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+  @media print {
+    body { background: #fff; }
+    .page { max-width: none; padding: 0; }
+    .hero, .section { box-shadow: none; }
+    .section { break-inside: avoid; }
+    a { color: #123; }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <span class="label">长期投资方案  |  50万元人民币  |  美国科技股与AI主线  |  多策略对比版</span>
+      <h1>以纳指100为主仓，以美国科技为核心，保留现金等待回撤。</h1>
+      <p>这是一份适合 5 到 10 年资金周期的 QDII ETF 组合方案。目标是用中国内地合规渠道，参与英伟达、微软、苹果、谷歌、Meta、亚马逊、AMD、博通等美国科技龙头，同时为 OpenAI 等未来上市公司留出指数纳入后的被动参与路径。</p>
+      <div class="hero-grid">
+        <div class="hero-stat"><div class="num">50万</div><div class="desc">计划投入本金</div></div>
+        <div class="hero-stat"><div class="num">60%</div><div class="desc">纳斯达克100主仓</div></div>
+        <div class="hero-stat"><div class="num">20%</div><div class="desc">纳斯达克科技增强</div></div>
+        <div class="hero-stat"><div class="num">12种</div><div class="desc">策略横向对比</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>一、组合结论</h2>
+      <p class="lead">核心配置是 30万买纳斯达克100 QDII，10万买纳斯达克科技增强 QDII，5万买标普500 QDII，5万留作现金或低风险现金管理。</p>
+      <div class="grid-2">
+        <div class="alloc mini-card">
+          <div class="donut"></div>
+          <div>
+            <div class="legend-row"><span class="swatch" style="background:var(--blue2)"></span><span>纳斯达克100 QDII 主仓</span><b>60%</b></div>
+            <div class="legend-row"><span class="swatch" style="background:var(--cyan)"></span><span>纳斯达克科技 QDII 增强</span><b>20%</b></div>
+            <div class="legend-row"><span class="swatch" style="background:var(--gold)"></span><span>标普500 QDII 平衡</span><b>10%</b></div>
+            <div class="legend-row"><span class="swatch" style="background:#9fb0c3"></span><span>现金、货币基金、国债逆回购</span><b>10%</b></div>
+          </div>
+        </div>
+        <div class="mini-card">
+          <strong>策略一句话</strong>
+          <p>用纳斯达克100拿住美国大科技核心资产，用 159509 增强 AI 与科技浓度，用少量标普500降低单一科技风格波动，用现金等待大跌时加仓。</p>
+          <div style="height:14px"></div>
+          <div class="note ok"><b>适用人群：</b>能接受美股科技股 20% 到 35% 阶段性回撤，资金期限不少于 5 年，且优先选择境内合规渠道的投资者。</div>
+        </div>
+      </div>
+
+      <h3>建议持仓表</h3>
+      <table>
+        <thead>
+          <tr><th>仓位</th><th>金额</th><th>投资方向</th><th>可选基金代码</th><th>选择规则</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pill">60%</span></td>
+            <td class="amount">30万元</td>
+            <td>纳斯达克100 QDII ETF</td>
+            <td>513300 华夏，159941 广发，513100 国泰</td>
+            <td>三选一或三选二，优先选当天溢价最低、成交额最大、买卖价差最小的产品。</td>
+          </tr>
+          <tr>
+            <td><span class="pill green">20%</span></td>
+            <td class="amount">10万元</td>
+            <td>纳斯达克科技增强 QDII ETF</td>
+            <td>159509 景顺长城</td>
+            <td>提高 AI、芯片、云计算、软件平台权重。单独持仓不超过总资产 25%。</td>
+          </tr>
+          <tr>
+            <td><span class="pill gold">10%</span></td>
+            <td class="amount">5万元</td>
+            <td>标普500 QDII ETF</td>
+            <td>513500 博时，513650 南方，159655 华夏，159612 国泰</td>
+            <td>作为美国宽基平衡仓，避免组合完全押在科技风格上。</td>
+          </tr>
+          <tr>
+            <td><span class="pill">10%</span></td>
+            <td class="amount">5万元</td>
+            <td>现金或低风险现金管理</td>
+            <td>券商现金管理、货币基金、国债逆回购</td>
+            <td>保留回撤加仓弹药，避免在高溢价、高估值时一次性买满。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>二、为什么这样配置</h2>
+      <div class="grid-3">
+        <div class="mini-card">
+          <strong>1. 纳指100是主仓</strong>
+          <p>纳斯达克100覆盖 Nasdaq 上市的 100 家大型非金融公司，行业包括软件、硬件、通信、零售、生命科学等。它天然覆盖美国科技龙头。</p>
+        </div>
+        <div class="mini-card">
+          <strong>2. 科技增强提高 AI 弹性</strong>
+          <p>159509 跟踪纳斯达克100科技板块市值加权方向，持仓更集中在科技股，适合提高英伟达、微软、苹果、博通、AMD 等 AI 产业链暴露。</p>
+        </div>
+        <div class="mini-card">
+          <strong>3. 现金降低买点风险</strong>
+          <p>AI 科技股波动很大，留 10% 现金可以在纳指回撤 10%、15%、20% 时分批加仓，避免一开始就把所有资金买在高位。</p>
+        </div>
+      </div>
+      <h3>OpenAI 等未上市公司如何参与</h3>
+      <p>OpenAI 当前无法通过 A 股账户直接购买。更现实的方式是通过纳斯达克100 QDII 和科技 QDII 持有微软等公开市场科技龙头。OpenAI 官方结构说明显示，微软在 OpenAI Group 中持有约 27% 权益。因此，微软是目前公开市场中最直接的 OpenAI 相关代理资产之一。未来 OpenAI 或同类公司正式上市并被纳入纳斯达克100、标普500或相关科技指数后，指数基金会按规则逐步反映这类公司的权重变化。</p>
+      <div class="note risk"><b>关键提醒：</b>这套组合追求长期增长，波动会明显高于银行理财和债券基金。不能用短期周转资金、应急资金、家庭必须支出资金来买。</div>
+    </section>
+
+
+
+    <section class="section">
+      <h2>三、不同投资策略对比</h2>
+      <p class="lead">下面把同样 50 万本金拆成十二种策略。收益测算统一采用前文相同三年数据：纳斯达克100 QDII 代表收益约 +98.6%，纳斯达克科技增强代理收益约 +151.9%，标普500 QDII 代表收益约 +73.1%，现金按 0% 简化计算。</p>
+
+      <div class="choice-grid">
+        <div class="choice-card"><b>风险偏好低</b>先看防守等待型、稳健宽基型、标普平衡型。<span>更重视回撤控制</span></div>
+        <div class="choice-card"><b>想要默认方案</b>优先看标准推荐型，兼顾纳指100、AI增强、宽基与现金。<span>主推</span></div>
+        <div class="choice-card"><b>强烈看好 OpenAI 与AI</b>看 OpenAI 代理增强型、进取科技型。<span>提高科技弹性</span></div>
+        <div class="choice-card"><b>担心买在高位</b>看分批入场型或科技杠铃型，用现金换取更强执行纪律。<span>降低买点压力</span></div>
+      </div>
+
+      <div class="strategy-grid">
+        
+        <div class="strategy-card">
+          <span class="winner-ribbon">防守等待型</span>
+          <h3>现金缓冲更高</h3>
+          <p class="tagline">适合担心短期高点，先参与一部分科技成长，同时保留较多弹药的人。</p>
+          <div class="return-big">79.7万</div>
+          <div class="return-small">三年估算总收益 +59.4%，年化约 +16.8%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:30%"></div></div><b>30%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:10%"></div></div><b>10%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:20%"></div></div><b>20%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:40%"></div></div><b>40%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">稳健宽基型</span>
+          <h3>降低科技集中度</h3>
+          <p class="tagline">适合希望参与美国科技，同时保留更多宽基和现金缓冲的人。</p>
+          <div class="return-big">88.3万</div>
+          <div class="return-small">三年估算总收益 +76.6%，年化约 +20.9%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:40%"></div></div><b>40%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:10%"></div></div><b>10%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:30%"></div></div><b>30%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:20%"></div></div><b>20%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">标普平衡型</span>
+          <h3>增加美国宽基</h3>
+          <p class="tagline">适合不想过度押注科技股，希望用标普500摊薄行业集中度的人。</p>
+          <div class="return-big">87.6万</div>
+          <div class="return-small">三年估算总收益 +75.3%，年化约 +20.6%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:35%"></div></div><b>35%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:10%"></div></div><b>10%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:35%"></div></div><b>35%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:20%"></div></div><b>20%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">均衡科技型</span>
+          <h3>科技与宽基平衡</h3>
+          <p class="tagline">适合看好 AI 和美国科技，但仍希望用宽基降低单一风格波动的人。</p>
+          <div class="return-big">97.2万</div>
+          <div class="return-small">三年估算总收益 +94.3%，年化约 +24.8%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:50%"></div></div><b>50%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:20%"></div></div><b>20%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:20%"></div></div><b>20%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:10%"></div></div><b>10%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card recommended">
+          <span class="winner-ribbon">主推方案</span>
+          <h3>标准推荐型</h3>
+          <p class="tagline">以纳指100为主，美国科技为核心，保留现金等待回撤。适合作为默认长期方案。</p>
+          <div class="return-big">98.4万</div>
+          <div class="return-small">三年估算总收益 +96.9%，年化约 +25.3%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:60%"></div></div><b>60%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:20%"></div></div><b>20%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:10%"></div></div><b>10%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:10%"></div></div><b>10%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">OpenAI代理增强型</span>
+          <h3>提高微软与AI生态暴露</h3>
+          <p class="tagline">适合更看重 OpenAI、云计算、AI 软件生态，希望科技增强略高于标准方案的人。</p>
+          <div class="return-big">99.8万</div>
+          <div class="return-small">三年估算总收益 +99.5%，年化约 +25.9%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:55%"></div></div><b>55%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:25%"></div></div><b>25%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:10%"></div></div><b>10%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:10%"></div></div><b>10%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">纯纳指100型</span>
+          <h3>简单持有核心指数</h3>
+          <p class="tagline">适合不想配置太多基金，只想用一只主指数长期持有美国科技龙头的人。</p>
+          <div class="return-big">94.4万</div>
+          <div class="return-small">三年估算总收益 +88.7%，年化约 +23.6%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:90%"></div></div><b>90%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:0%"></div></div><b>0%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:0%"></div></div><b>0%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:10%"></div></div><b>10%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">科技杠铃型</span>
+          <h3>高科技仓加高现金</h3>
+          <p class="tagline">一边提高科技增强仓，一边留 25% 现金等待大跌。适合能遵守回撤加仓纪律的人。</p>
+          <div class="return-big">95.0万</div>
+          <div class="return-small">三年估算总收益 +89.9%，年化约 +23.8%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:45%"></div></div><b>45%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:30%"></div></div><b>30%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:0%"></div></div><b>0%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:25%"></div></div><b>25%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">进取科技型</span>
+          <h3>提高纳指和科技仓</h3>
+          <p class="tagline">适合风险承受力较强，愿意承受更大回撤来换取更高科技股弹性的人。</p>
+          <div class="return-big">103.5万</div>
+          <div class="return-small">三年估算总收益 +107.0%，年化约 +27.4%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:70%"></div></div><b>70%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:25%"></div></div><b>25%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:0%"></div></div><b>0%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:5%"></div></div><b>5%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">满仓科技进攻型</span>
+          <h3>不留现金，集中科技</h3>
+          <p class="tagline">适合强风险承受力，且能承受买入后短期大幅回撤的人。执行难度高。</p>
+          <div class="return-big">106.0万</div>
+          <div class="return-small">三年估算总收益 +111.9%，年化约 +28.4%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:75%"></div></div><b>75%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:25%"></div></div><b>25%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:0%"></div></div><b>0%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:0%"></div></div><b>0%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">极进取 AI 型</span>
+          <h3>押注科技增强</h3>
+          <p class="tagline">适合强烈看好 AI 主线的人。历史收益更高，组合波动和回撤压力也最大。</p>
+          <div class="return-big">105.0万</div>
+          <div class="return-small">三年估算总收益 +110.1%，年化约 +28.1%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:50%"></div></div><b>50%</b></div><div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:40%"></div></div><b>40%</b></div><div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:0%"></div></div><b>0%</b></div><div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:10%"></div></div><b>10%</b></div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <span class="winner-ribbon">分批入场型</span>
+          <h3>同样仓位，慢慢买</h3>
+          <p class="tagline">适合担心短期高点的人。强牛市中收益可能低一些，但心理压力更低。</p>
+          <div class="return-big">92到95万</div>
+          <div class="return-small">三年估算总收益约 +84% 到 +90%，年化约 +22% 到 +24%</div>
+          <div class="mix-list">
+            <div class="mix-item"><span>纳指100</span><div class="mix-bg"><div class="mix-fill" style="width:60%"></div></div><b>60%</b></div>
+            <div class="mix-item"><span>科技增强</span><div class="mix-bg"><div class="mix-fill tech" style="width:20%"></div></div><b>20%</b></div>
+            <div class="mix-item"><span>标普500</span><div class="mix-bg"><div class="mix-fill sp" style="width:10%"></div></div><b>10%</b></div>
+            <div class="mix-item"><span>现金</span><div class="mix-bg"><div class="mix-fill cash" style="width:10%"></div></div><b>10%</b></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>收益与风险对照表</h3>
+      <table class="compact-table">
+        <thead>
+          <tr><th>策略</th><th>仓位结构</th><th>三年后估算</th><th>盈利</th><th>年化收益</th><th>风险级别</th><th>适合人群</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>防守等待型</td><td>30% 纳指100，10% 科技增强，20% 标普500，40% 现金</td><td class="amount">79.7万</td><td>29.7万</td><td>16.8%</td><td><span class="heat-low">较低</span></td><td>风险偏好较低，愿意牺牲部分收益换取更高等待空间。</td></tr>
+          <tr><td>稳健宽基型</td><td>40% 纳指100，10% 科技增强，30% 标普500，20% 现金</td><td class="amount">88.3万</td><td>38.3万</td><td>20.9%</td><td><span class="heat-low">中等</span></td><td>希望兼顾增长和防守的人。</td></tr>
+          <tr><td>标普平衡型</td><td>35% 纳指100，10% 科技增强，35% 标普500，20% 现金</td><td class="amount">87.6万</td><td>37.6万</td><td>20.6%</td><td><span class="heat-low">中等</span></td><td>更重视组合稳定性，接受收益弹性较低。</td></tr>
+          <tr><td>均衡科技型</td><td>50% 纳指100，20% 科技增强，20% 标普500，10% 现金</td><td class="amount">97.2万</td><td>47.2万</td><td>24.8%</td><td><span class="heat-mid">中高</span></td><td>看好 AI，但仍希望保留宽基平衡的人。</td></tr>
+          <tr><td><b>主推方案</b></td><td>60% 纳指100，20% 科技增强，10% 标普500，10% 现金</td><td class="amount"><b>98.4万</b></td><td><b>48.4万</b></td><td><b>25.3%</b></td><td><span class="heat-mid">中高</span></td><td>适合多数长期配置美国科技股的人。</td></tr>
+          <tr><td>OpenAI代理增强型</td><td>55% 纳指100，25% 科技增强，10% 标普500，10% 现金</td><td class="amount">99.8万</td><td>49.8万</td><td>25.9%</td><td><span class="heat-mid">中高</span></td><td>看好 OpenAI 相关生态，但仍想保留少量宽基和现金。</td></tr>
+          <tr><td>纯纳指100型</td><td>90% 纳指100，0% 科技增强，0% 标普500，10% 现金</td><td class="amount">94.4万</td><td>44.4万</td><td>23.6%</td><td><span class="heat-high">高</span></td><td>追求简单执行，不想频繁再平衡的人。</td></tr>
+          <tr><td>科技杠铃型</td><td>45% 纳指100，30% 科技增强，0% 标普500，25% 现金</td><td class="amount">95.0万</td><td>45.0万</td><td>23.8%</td><td><span class="heat-high">高</span></td><td>愿意等待大跌买入，不能忍受满仓波动的人。</td></tr>
+          <tr><td>进取科技型</td><td>70% 纳指100，25% 科技增强，0% 标普500，5% 现金</td><td class="amount">103.5万</td><td>53.5万</td><td>27.4%</td><td><span class="heat-high">高</span></td><td>能承受明显回撤，资金期限较长的人。</td></tr>
+          <tr><td>满仓科技进攻型</td><td>75% 纳指100，25% 科技增强，0% 标普500，0% 现金</td><td class="amount">106.0万</td><td>56.0万</td><td>28.4%</td><td><span class="heat-high">很高</span></td><td>资金期限长，心理承受力强，不需要现金缓冲的人。</td></tr>
+          <tr><td>极进取 AI 型</td><td>50% 纳指100，40% 科技增强，0% 标普500，10% 现金</td><td class="amount">105.0万</td><td>55.0万</td><td>28.1%</td><td><span class="heat-high">很高</span></td><td>强烈看好 AI，能承受较大波动的人。</td></tr>
+          <tr><td>分批入场型</td><td>目标仍为 60%、20%、10%、10%，但用 6 到 12 个月买入</td><td class="amount">92到95万</td><td>42到45万</td><td>22%到24%</td><td><span class="heat-mid">中高</span></td><td>担心短期买在高位，希望降低心理压力的人。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>策略怎么选</h3>
+      <table class="compact-table">
+        <thead><tr><th>投资者情况</th><th>优先策略</th><th>选择原因</th><th>不建议选择</th></tr></thead>
+        <tbody>
+          <tr><td>第一次买美股科技基金，担心短期波动</td><td>防守等待型、稳健宽基型、分批入场型</td><td>现金比例高，宽基比例高，买点压力较小。</td><td>满仓科技进攻型、极进取 AI 型</td></tr>
+          <tr><td>长期看好美国科技，但希望可执行性强</td><td><b>标准推荐型</b></td><td>60% 纳指100是核心，20% 科技增强提供 AI 弹性，10% 现金保留回撤加仓空间。</td><td>频繁切换策略</td></tr>
+          <tr><td>重点看好 OpenAI、微软、英伟达、云计算和AI生态</td><td>OpenAI代理增强型、进取科技型</td><td>科技增强仓更高，能提高 AI 主线的暴露。</td><td>过高现金仓位</td></tr>
+          <tr><td>只想简单执行，不想买太多只基金</td><td>纯纳指100型</td><td>只需要选择一只低溢价、高成交的纳指100 QDII，再留 10% 现金即可。</td><td>复杂的多基金轮动</td></tr>
+          <tr><td>能承受较大回撤，资金 5 到 10 年不用</td><td>进取科技型、满仓科技进攻型</td><td>历史回测收益更高，但必须接受科技股大幅波动。</td><td>短期资金参与</td></tr>
+        </tbody>
+      </table>
+
+      <div class="compare-note">
+        <div class="note ok"><b>建议选择：</b>给他人展示时，标准推荐型更适合作为主方案。它既保留纳指100和 AI 科技弹性，也保留 10% 现金用于回撤加仓。</div>
+        <div class="note risk"><b>重要说明：</b>历史上收益最高的是满仓科技进攻型和极进取 AI 型，但它们对科技股估值、AI 商业化、芯片周期和美元利率更敏感。未来下跌时，最大回撤也可能更深。</div>
+      </div>
+      <p class="strategy-note-line">对外展示时，建议把“标准推荐型”作为默认方案，把“稳健宽基型”和“进取科技型”作为两端对照，把“满仓科技进攻型”和“极进取 AI 型”明确标注为高波动方案。</p>
+    </section>
+
+    <section class="section">
+      <h2>四、具体操作路径</h2>
+      <p class="lead">用中国内地正规券商 A 股账户买场内 QDII ETF 即可。无需自己换美元，也无需开境外券商账户。</p>
+      <div class="steps">
+        <div class="step">
+          <b>开通或使用已有证券账户</b>
+          确认账户有沪 A、深 A 交易权限。513 开头通常是沪市 ETF，159 开头通常是深市 ETF。
+        </div>
+        <div class="step">
+          <b>银证转账</b>
+          把计划投入的资金转入证券账户。建议先转 20 万用于底仓，剩余资金按月转入或放在现金管理工具中。
+        </div>
+        <div class="step">
+          <b>输入基金代码并限价买入</b>
+          在券商 App 选择“交易”与“买入”，输入 513300、159941、513100、159509、513500 等代码。下单时使用限价委托，不建议用市价单扫货。
+        </div>
+        <div class="step">
+          <b>下单前检查三个指标</b>
+          看溢价率、成交额、买卖价差。优先低溢价、高成交、窄价差产品。QDII ETF 因额度限制可能出现高溢价，高溢价会直接降低长期收益。
+        </div>
+        <div class="step">
+          <b>按计划分批买</b>
+          第一阶段先建底仓 20 万，第二阶段用 10 个月投入 25 万，第三阶段保留 5 万现金等回撤。
+        </div>
+      </div>
+
+      <h3>买入节奏</h3>
+      <table>
+        <thead><tr><th>阶段</th><th>纳指100 QDII</th><th>159509 科技增强</th><th>标普500 QDII</th><th>现金</th></tr></thead>
+        <tbody>
+          <tr><td>第1阶段：先建底仓</td><td class="amount">13万元</td><td class="amount">4万元</td><td class="amount">3万元</td><td>保留</td></tr>
+          <tr><td>第2阶段：10个月分批</td><td>每月 1.7万元</td><td>每月 6000元</td><td>每月 2000元</td><td>不动</td></tr>
+          <tr><td>第3阶段：回撤加仓</td><td>纳指回撤 10% 加 1.5万元，回撤 15% 再加 1.5万元，回撤 20% 以上分两次用完剩余 2万元</td><td>只在组合低于目标仓位时补</td><td>通常不额外加</td><td>用于回撤</td></tr>
+        </tbody>
+      </table>
+
+      <h3>溢价率纪律</h3>
+      <table>
+        <thead><tr><th>溢价率</th><th>操作建议</th><th>原因</th></tr></thead>
+        <tbody>
+          <tr><td>0% 到 1%</td><td><span class="pill green">可正常分批</span></td><td>买入价格接近基金真实价值。</td></tr>
+          <tr><td>1% 到 3%</td><td><span class="pill gold">小额买入</span></td><td>可以买底仓，但不适合大额一次性买入。</td></tr>
+          <tr><td>3% 到 5%</td><td><span class="pill gold">放慢或等待</span></td><td>溢价已明显侵蚀安全边际。</td></tr>
+          <tr><td>5%以上</td><td><span class="pill red">不建议追</span></td><td>未来溢价回落会造成额外损失，即使底层指数没有下跌。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>五、过去三年回测</h2>
+      <p class="lead">回测区间采用 2023年6月13日 到 2026年6月12日。这里给出两个口径：严格可执行口径与策略目标口径。159509 在 2023年7月19日成立，所以没有完整三年实盘历史。</p>
+
+      <div class="grid-2">
+        <div class="mini-card">
+          <strong>严格可执行口径</strong>
+          <p>三年前 159509 尚未成立，把 20% 科技增强仓临时放入纳斯达克100 QDII。即：80% 纳指100 QDII、10% 标普500 QDII、10% 现金。</p>
+          <div class="bar-wrap">
+            <div class="bar-row"><span>初始本金</span><div class="bar-bg"><div class="bar graybar" style="width:50.8%"></div></div><span class="number">50.0万</span></div>
+            <div class="bar-row"><span>三年后</span><div class="bar-bg"><div class="bar" style="width:94.6%"></div></div><span class="number">93.1万</span></div>
+          </div>
+          <p class="small">估算收益：+43.1万，总收益 +86.2%，年化约 +23.0%。</p>
+        </div>
+        <div class="mini-card">
+          <strong>策略目标口径</strong>
+          <p>按现在的目标组合计算，其中 159509 使用其底层纳斯达克100科技板块指数从 2023年7月19日到 2026年6月12日的表现作为代理。</p>
+          <div class="bar-wrap">
+            <div class="bar-row"><span>初始本金</span><div class="bar-bg"><div class="bar graybar" style="width:50.8%"></div></div><span class="number">50.0万</span></div>
+            <div class="bar-row"><span>三年后</span><div class="bar-bg"><div class="bar goldbar" style="width:100%"></div></div><span class="number">98.4万</span></div>
+          </div>
+          <p class="small">估算收益：+48.4万，总收益 +96.9%，年化约 +25.3%。</p>
+        </div>
+      </div>
+
+      <h3>回测明细</h3>
+      <table>
+        <thead><tr><th>资产</th><th>回测使用数据</th><th>收益率</th><th>50万目标组合中的贡献</th></tr></thead>
+        <tbody>
+          <tr><td>纳斯达克100 QDII 主仓</td><td>以 513300 三年收益作为代表</td><td class="amount">+98.6%</td><td>30万元变约 59.6万元</td></tr>
+          <tr><td>纳斯达克科技增强</td><td>159509 无完整三年，用纳斯达克100科技板块总回报指数代理</td><td class="amount">+151.9%</td><td>10万元变约 25.2万元</td></tr>
+          <tr><td>标普500 QDII 平衡</td><td>以 513500 三年收益作为代表</td><td class="amount">+73.1%</td><td>5万元变约 8.7万元</td></tr>
+          <tr><td>现金</td><td>按 0% 简化计算</td><td class="amount">0%</td><td>5万元仍为 5万元</td></tr>
+          <tr><td><b>合计</b></td><td>目标口径</td><td class="amount">+96.9%</td><td><b>50万元变约 984，312 元</b></td></tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <b>参考指数表现：</b>FRED 数据显示，纳斯达克100从 2023年6月13日的 14,900.85 点到 2026年6月12日的 29,635.95 点，涨幅约 +98.9%；标普500从 4,369.01 点到 7,431.46 点，涨幅约 +70.1%。QDII ETF 的实际收益还会受到人民币汇率、基金费率、跟踪误差、场内溢价和买入时点影响。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>六、长期持有与再平衡规则</h2>
+      <table>
+        <thead><tr><th>规则</th><th>执行方法</th><th>目的</th></tr></thead>
+        <tbody>
+          <tr><td>年度检查</td><td>每年固定一个月份检查一次，不需要每天看盘。</td><td>避免情绪化操作。</td></tr>
+          <tr><td>仓位区间</td><td>纳指100保持 55% 到 65%，159509 保持 15% 到 25%，标普500保持 8% 到 15%，现金保持 5% 到 15%。</td><td>让组合长期围绕目标风险暴露运行。</td></tr>
+          <tr><td>科技增强过热</td><td>159509 因大涨超过总资产 30% 时，卖出一部分回到 20% 附近。</td><td>控制单一科技风格集中度。</td></tr>
+          <tr><td>大跌加仓</td><td>纳指100从高点回撤 10%、15%、20% 时，使用预留现金分批加仓。</td><td>把波动转化为长期买入机会。</td></tr>
+          <tr><td>禁止事项</td><td>不借钱买，不满仓买高溢价，不因一天涨跌临时改变计划。</td><td>减少重大错误。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>七、风险提示</h2>
+      <div class="grid-3">
+        <div class="mini-card">
+          <strong>估值风险</strong>
+          <p>AI 龙头估值可能在乐观预期下被推高，未来盈利兑现不及预期时会出现快速回撤。</p>
+        </div>
+        <div class="mini-card">
+          <strong>汇率风险</strong>
+          <p>QDII 以人民币计价，但底层资产多为美元。人民币兑美元变动会影响基金净值。</p>
+        </div>
+        <div class="mini-card">
+          <strong>溢价风险</strong>
+          <p>QDII 额度紧张时，场内 ETF 价格可能高于净值。高溢价买入会带来额外损耗。</p>
+        </div>
+      </div>
+      <p class="small">本页为策略说明和教育材料，不承诺收益，不保证适合所有投资者。实际执行前需要根据资金期限、家庭现金流、风险承受能力、税务情况和产品实时溢价进行调整。</p>
+    </section>
+
+    <section class="section">
+      <h2>八、资料来源</h2>
+      <ul class="source-list">
+        <li>Nasdaq 官方，Nasdaq-100 指数说明与全球可投资产品列表，列出 ChinaAMC 513300、GF 159941、Guotai 513100 等中国 QDII 产品。https://www.nasdaq.com/solutions/global-indexes/nasdaq-100/ways-to-invest</li>
+        <li>Nasdaq/FRED，NASDAQ-100 日度收盘数据，2023-06-13 为 14,900.85，2026-06-12 为 29,635.95。https://fred.stlouisfed.org/series/NASDAQ100</li>
+        <li>S&P Dow Jones Indices/FRED，S&P 500 日度收盘数据，2023-06-13 为 4,369.01，2026-06-12 为 7,431.46。https://fred.stlouisfed.org/series/SP500</li>
+        <li>Yahoo Finance，ChinaAMC NASDAQ 100 ETF QDII 513300.SS，三年收益数据。https://finance.yahoo.com/quote/513300.SS/</li>
+        <li>Yahoo Finance，Bosera S&P 500 QDII Fund 513500.SS，三年收益数据。https://finance.yahoo.com/quote/513500.SS/</li>
+        <li>Financial Times，159509 景顺长城纳斯达克科技 ETF QDII，成立日期为 2023-07-19。https://markets.ft.com/data/etfs/tearsheet/summary?s=159509:SHZ:CNY</li>
+        <li>Nasdaq/FRED，NASDAQ-100 Technology Sector Market-Cap Weighted Total Return Index，2023-07-19 为 1,175.20，2026-06-12 为 2,960.06。https://fred.stlouisfed.org/series/NASDAQNDXTMCTR</li>
+        <li>OpenAI 官方，Our Structure，Microsoft 持有 OpenAI Group 约 27% 权益。https://openai.com/our-structure/</li>
+              <li>十二种策略对比收益由同一组公开市场历史数据线性加权估算，未扣除个人交易佣金、税费和实际买入溢价，现金按 0% 简化计算。</li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      编制日期：2026年6月13日。数据以 2026年6月12日美股收盘及相关公开资料为准。
+    </div>
+  </main>
+</body>
+</html>
