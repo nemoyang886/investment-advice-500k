@@ -763,7 +763,29 @@
     }
 
     @media (max-width: 920px) {
+      body {
+        line-height: 1.62;
+      }
+
+      .wrap {
+        width: min(100% - 28px, 680px);
+      }
+
       .nav a { display: none; }
+
+      .topbar .wrap {
+        min-height: 52px;
+      }
+
+      .brand {
+        font-size: 13px;
+      }
+
+      .print {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+
       .hero,
       .section-title,
       .twocol,
@@ -773,12 +795,45 @@
       }
       .hero {
         min-height: auto;
-        padding-top: 56px;
-        gap: 32px;
+        padding: 34px 0 28px;
+        gap: 18px;
       }
-      h1 { font-size: 42px; }
-      h2 { font-size: 34px; }
-      .subtitle { font-size: 18px; }
+
+      .seal {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 16px;
+        font-size: 17px;
+      }
+
+      h1 {
+        font-size: 34px;
+        line-height: 1.18;
+      }
+
+      h2 {
+        margin-top: 5px;
+        font-size: 29px;
+        line-height: 1.2;
+      }
+
+      .subtitle {
+        margin-top: 14px;
+        font-size: 16px;
+        line-height: 1.62;
+      }
+
+      .section-title {
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .section-title p {
+        margin-top: 4px;
+        font-size: 15px;
+        line-height: 1.62;
+      }
+
       .hero-summary,
       .money-grid,
       .rights-grid,
@@ -787,13 +842,153 @@
       .gallery {
         grid-template-columns: 1fr;
       }
+
+      .hero-summary {
+        margin-top: 0;
+      }
+
+      .summary-item {
+        min-height: auto;
+        padding: 15px 16px;
+      }
+
+      .summary-item b {
+        font-size: 23px;
+      }
+
+      .summary-item span {
+        margin-top: 4px;
+        line-height: 1.45;
+      }
+
+      .hero-rail {
+        padding: 22px 20px;
+      }
+
+      .hero-rail::before {
+        inset: 12px;
+      }
+
+      .rail-number {
+        margin: 8px 0 6px;
+        font-size: 48px;
+      }
+
+      .rail-note {
+        margin-bottom: 16px;
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .rail-list {
+        gap: 8px;
+      }
+
+      .rail-list li {
+        padding-top: 10px;
+      }
+
+      .rail-list b {
+        font-size: 18px;
+      }
+
+      .money-cell,
+      .contract,
+      .right,
+      .choice article {
+        min-height: auto;
+      }
+
+      .money-cell,
+      .detail-card,
+      .right,
+      .six-card,
+      .choice article,
+      .contract,
+      .condition-item {
+        padding: 18px;
+      }
+
+      .money-cell strong {
+        font-size: 27px;
+      }
+
+      .money-cell p,
+      .contract p,
+      .detail-card p,
+      .right p,
+      .six-card p {
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 1.58;
+      }
+
+      .twocol,
+      .standard,
+      .choice,
+      .six-grid,
+      .detail-grid,
+      .gallery {
+        gap: 12px;
+      }
+
+      .timeline,
+      .standard-panel,
+      .lead-box,
+      .closing {
+        padding: 22px;
+      }
+
+      .timeline h3,
+      .standard-panel h3,
+      .choice h3 {
+        font-size: 26px;
+      }
+
+      .step {
+        grid-template-columns: 52px 1fr;
+        gap: 12px;
+        padding: 14px 0;
+      }
+
+      .step:first-of-type {
+        margin-top: 12px;
+      }
+
+      .age {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+      }
+
+      .step b {
+        font-size: 18px;
+      }
+
+      .list {
+        gap: 9px;
+      }
+
+      .list li {
+        padding: 12px 14px 12px 16px;
+        font-size: 14px;
+        line-height: 1.58;
+      }
+
+      .lead-box {
+        font-size: 17px;
+        line-height: 1.6;
+      }
+
       .contract-flow {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 8px;
+        margin-top: 8px;
       }
       .arrow {
         transform: rotate(90deg);
-        height: 34px;
+        height: 24px;
+        font-size: 24px;
       }
       table,
       thead,
@@ -812,20 +1007,22 @@
       thead { display: none; }
       tbody {
         display: grid;
-        gap: 12px;
+        gap: 8px;
       }
       tr {
-        padding: 10px 16px;
+        padding: 8px 14px;
         border: 1px solid var(--line);
         background: rgba(255, 253, 247, .92);
       }
       td {
         display: flex;
         justify-content: space-between;
-        gap: 18px;
-        padding: 10px 0;
+        gap: 14px;
+        padding: 7px 0;
         border-bottom: 1px solid rgba(18, 27, 27, .09);
         text-align: right;
+        font-size: 14px;
+        line-height: 1.45;
       }
       td:last-child { border-bottom: 0; }
       td::before {
@@ -836,9 +1033,108 @@
         font-size: 12px;
         text-align: left;
       }
-      .hero-rail { padding: 28px 24px; }
-      .rail-number { font-size: 58px; }
-      section { padding: 62px 0; }
+
+      .standard-panel p,
+      .condition-item span,
+      .right ul,
+      .six-card ul,
+      .choice ul,
+      .detail-card ul {
+        margin-top: 10px;
+        line-height: 1.58;
+      }
+
+      .badge-row {
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .badge {
+        padding: 12px;
+      }
+
+      .badge b {
+        font-size: 20px;
+      }
+
+      figcaption {
+        padding: 10px 12px 12px;
+        line-height: 1.45;
+      }
+
+      .closing p {
+        font-size: 19px;
+        line-height: 1.58;
+      }
+
+      .notice {
+        padding: 16px;
+        font-size: 12px;
+        line-height: 1.62;
+      }
+
+      section {
+        padding: 34px 0;
+      }
+
+      footer {
+        padding: 24px 0 34px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        width: min(100% - 24px, 680px);
+      }
+
+      .topbar .wrap {
+        min-height: 48px;
+        gap: 10px;
+      }
+
+      .brand {
+        white-space: normal;
+        line-height: 1.25;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      .subtitle,
+      .section-title p {
+        font-size: 15px;
+      }
+
+      .print {
+        flex: 0 0 auto;
+      }
+
+      .timeline,
+      .standard-panel,
+      .lead-box,
+      .closing,
+      .money-cell,
+      .detail-card,
+      .right,
+      .six-card,
+      .choice article,
+      .contract,
+      .condition-item {
+        padding: 16px;
+      }
+
+      .summary-item {
+        padding: 13px 14px;
+      }
+
+      section {
+        padding: 30px 0;
+      }
     }
 
     @media print {
