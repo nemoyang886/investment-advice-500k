@@ -673,6 +673,27 @@
       line-height: 1.7;
     }
 
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      color: var(--jade);
+      border-bottom: 1px solid rgba(40, 90, 80, .28);
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+
+    .card-link::after {
+      content: "->";
+      font-family: "Crimson Text", Georgia, serif;
+      font-size: 15px;
+      transform: translateY(-1px);
+    }
+
     .choice {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1042,6 +1063,11 @@
       .detail-card ul {
         margin-top: 10px;
         line-height: 1.58;
+      }
+
+      .card-link {
+        margin-top: 12px;
+        font-size: 13px;
       }
 
       .badge-row {
@@ -1558,6 +1584,7 @@
               <li>健康管理：营养代谢、人体成分分析、入住式体检房费折扣等。</li>
               <li>生活权益：京山农场住宿餐饮、活动课程、仙鹤湖生命关怀服务等。</li>
             </ul>
+            <a class="card-link" href="detail/chuhui-card.html">查看楚惠卡详细说明</a>
           </article>
           <article class="right">
             <h3>私人医生与家庭健康管理</h3>
@@ -1568,6 +1595,7 @@
               <li>按等级匹配权益体检、上门问诊、每月健康追踪等服务。</li>
               <li>必要时可进一步衔接泰康医疗、绿通、康复等资源。</li>
             </ul>
+            <a class="card-link" href="detail/private-doctor.html">查看私人医生详细说明</a>
           </article>
         </div>
       </div>
@@ -1615,6 +1643,7 @@
               <li>子女教育：教育沙龙、名校研学、成长规划等资源，可按家庭情况选择性使用。</li>
               <li>对丁克家庭，这部分可重点理解为企业成长、认知升级和家庭长期规划资源。</li>
             </ul>
+            <a class="card-link" href="detail/education-private.html">查看教育私享详细说明</a>
           </article>
 
           <article class="six-card">
@@ -1626,6 +1655,7 @@
               <li>艺术创作与拍卖交易：了解艺术品收藏、送拍、交易等基础路径。</li>
               <li>藏品保管：围绕收藏品管理和保管需求提供相关资源连接。</li>
             </ul>
+            <a class="card-link" href="detail/art-private.html">查看艺术私享详细说明</a>
           </article>
 
           <article class="six-card">
